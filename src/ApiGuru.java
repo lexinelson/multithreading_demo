@@ -57,7 +57,7 @@ public class ApiGuru {
         }
     }
 
-    private void writeApiServicesToFile(String api, List<String> services) {
+    private synchronized void writeApiServicesToFile(String api, List<String> services) {
         try (FileWriter writer = new FileWriter(fileName, true)) {
             writer.write(api + " -- " + services.toString() + "\n");
         } catch (IOException exc) {
